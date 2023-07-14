@@ -1,3 +1,6 @@
 module.exports = {
-    publicPath: '/vue-recepts/'
-}
+    publicPath: process.env.NODE_ENV === 'production'
+      ? '/recipes/'  // Замените на имя вашего репозитория
+      : '/'
+  }
+  
