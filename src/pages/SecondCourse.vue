@@ -35,7 +35,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .back{
-    background: url('@/assets/1.svg');
+    background: url('@/assets/1.jpg');
     min-height: 90vh;
     background-attachment: fixed;
     display: flex;

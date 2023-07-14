@@ -42,7 +42,7 @@ export default {
 </script>
 <style lang="scss" scoped>
     .center{
-        background: url('@/assets/1.svg');
+        background: url('@/assets/1.jpg');
         background-attachment: fixed;
         width: 100%;
         height: 90vh;
@@ -152,7 +152,8 @@ export default {
             font-size: 30px;
         }
         .inblock{
-            width: 45%;
+            width: 55%;
+            height: 80%;
         }
         .list{
             width: 100%;
