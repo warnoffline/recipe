@@ -1,23 +1,20 @@
 <template lang="">
     <div class="center">
         <div class="into">
-            <div v-if="isList" class="text">
+            <div v-if="isList" class="txt">
                 <p>Не откладывай до ужина то, что можешь съесть за обедом</p>
             </div>
-            <div @click="openList" v-if="isList" class="block">
-                <div class="inblock">
-                    <img src="@/assets/2.svg" alt="">
-                </div>
+            <div v-if="isList" class="kategoria">
+                <p>Выберите категорию еды</p>
+                <img @click="openList" src="../assets/2.svg" alt="">
             </div>
-            <div v-else class="openList">
-                <div class="list">
-                    <img @click="closeList" src="@/assets/3.svg" alt="">
-                    <p>Выберите категорию еды</p>
-                    <div class="buttons">
-                        <button @click="$router.push('/soup')">Супы</button>
-                        <button @click="$router.push('/secondCourse')">Вторые блюда</button>
-                        <button @click="$router.push('/dessert')">Десерты</button>
-                    </div>
+            <div v-else class="buttons">
+                <p>Выберите категорию еды</p>
+                <img @click="closeList" src="../assets/3.svg" alt="">
+                <div class="listButtons">
+                    <button class="first" @click="$router.push('/soup')">Супы</button>
+                    <button @click="$router.push('/secondCourse')">Вторые блюда</button>
+                    <button class="last" @click="$router.push('/dessert')">Десерты</button>
                 </div>
             </div>
         </div>
@@ -25,6 +22,7 @@
 </template>
 <script>
 export default {
+    
     data(){
         return{
             isList: true
@@ -44,80 +42,74 @@ export default {
     .center{
         background: url('@/assets/1.jpg');
         background-attachment: fixed;
-        width: 100%;
-        height: 90vh;
-        
-    }
-    .into{
-        height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-    }
-    .text{
-        width: 100%;
-        height: 60%;
-        display: flex;
-        justify-content: center;
         align-items: center;
-        color: white;
-        font-size: 35px;
-        font-weight: bold;
-    }
-    .text p{
-        width: 40%;
-        text-align: center;
-    }
-    .block{
-        height: 30%;
-        display: flex;
         justify-content: center;
-        align-items: end;
-    }
-    .inblock{
-        background-color: #F60030;
-        width: 20%;
-        display: flex;
-        justify-content: center;
-        height: 40%;
-        border-radius: 20px 20px 0 0;
-        transition: 1s;
-    }
-    .inblock img{
-        width: 25%;
-    }
-    .inblock:hover{
-        transform: translateY(-20px);
-        transition: 1s;
-        border-radius: 20px;
-    }
-    .openList{
         width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: end;
+        height: 100vh;
     }
-    .list{
+    .into{
+        width: 60%;
         background-color: #F60030;
+        height: 80%;
+        border-radius: 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        height: 70%;
-        width: 60%;
-        font-size: 30px;
         color: white;
-        border-radius: 20px 20px 0 0;
+    }
+    .txt{
+        font-size: 50px;
+        text-align: center;
+        width: 60%;
+    }
+    .kategoria{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: space-around;
+        height: 20%;
+        p{
+            font-size: 25px;
+        }
+        img{
+            width: 30%;
+        }
+        img:hover{
+            cursor: pointer;
+        }
     }
     .buttons{
-        width: 100%;
-        height: 50%;
+        width: 80%;
+        height: 80%;
+        text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+        img{
+            width: 10%;
+            height: 20%;
+            margin: 20px 0;
+        }
+        p{
+            font-size: 25px;
+            height: 20%;
+        }
+        img:hover{
+            cursor: pointer;
+        }
+    }
+    .listButtons{
+        height: 40%;
+        width: 60%;
+        text-align: center;
         button{
-            height: 30%;
+            width: 100%;
+            height: 40%;
             font-size: 25px;
             border: 0px;
             background-color: #AC011C;
@@ -127,43 +119,43 @@ export default {
             background-color: #2D0001;
         }
     }
-    .list img{
-        width: 10%;
-        transition: 1s;
+    .first{
+        border-radius: 20px 20px 0 0 ;
     }
-    .list img:hover{
-        transform: translateY(20px);
-        transition: 1s;
+    .last{
+        border-radius: 0 0 20px 20px;
     }
-    @media screen and (min-width: 600px) and (max-width: 900px) {
-        .text p{
-            width: 70%;
+    @media screen and (min-width: 600px) and (max-width: 1000px) {
+        .into{
+            width: 80%;
         }
-        .inblock{
-            width: 30%;
+        .txt{
+            width: 90%;
+            font-size: 35px;
         }
-        .list{
+        .buttons img{ 
+            width: 15%;
+        }
+        .listButtons{
             width: 80%;
         }
     }
     @media screen and (max-width: 599px){
-        .text p{
-            width: 85%;
-            font-size: 30px;
-        }
-        .inblock{
-            width: 55%;
-            height: 80%;
-        }
-        .list{
+        .into{
             width: 100%;
-            p{
-                font-size: 25px;
-                text-align: center;
-            }
         }
-        .buttons button{
-            font-size: 25px;
+        .txt{
+            width: 95%;
+            font-size: 35px;
+        }
+        .listButtons{
+            width: 100%;
+        }
+        .buttons{
+            width: 90%;
+            img{
+                width: 20%;
+            }
         }
     }
 </style>

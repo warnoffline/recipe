@@ -1,15 +1,20 @@
 <template lang="">
+    <div class="root">
+    <NavBar></NavBar>
     <div class="back">
         <second-list
         :seconds="seconds" 
         />
     </div>
+</div>
 </template>
 <script>
+import NavBar from '@/components/NavBar.vue'
 import axios from 'axios'
 import SecondList from '@/components/second/SecondList.vue'
 export default {
     components:{
+        NavBar,
         SecondList
     },
     data(){
@@ -40,5 +45,11 @@ export default {
     background-attachment: fixed;
     display: flex;
     justify-content: center;
+    width: 100%;
+}
+.root{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 </style>

@@ -1,15 +1,20 @@
 <template lang="">
-    <div class="back">
-        <soup-list
-        :soups="soups" 
-        />
+    <div class="root">
+        <NavBar></NavBar>
+        <div class="back">
+            <soup-list
+            :soups="soups" 
+            />
+        </div>
     </div>
 </template>
 <script>
+import NavBar from '@/components/NavBar.vue'
 import axios from 'axios'
 import SoupList from '@/components/soup/SoupList.vue'
 export default {
     components:{
+        NavBar,
         SoupList
     },
     data(){
@@ -36,9 +41,16 @@ export default {
 <style lang="scss" scoped>
 .back{
     background: url('@/assets/1.jpg');
-    min-height: 90vh;
+    min-height: 100vh;
     background-attachment: fixed;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
+.root{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
 </style>

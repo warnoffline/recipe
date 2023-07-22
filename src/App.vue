@@ -1,7 +1,6 @@
 <template>
   <div class="app">
     <div v-if="isLoad" class="main">
-      <nav-bar></nav-bar>
       <router-view></router-view>
     </div>
     <div v-else class="loading">
@@ -11,9 +10,9 @@
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue'
+
 export default{
-  components: {NavBar},
+  
   data(){
     return{
       isLoad: false
