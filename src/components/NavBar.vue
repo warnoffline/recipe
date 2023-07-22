@@ -1,6 +1,6 @@
 <template lang="">
-    <div v-if="isNav" class="navbar">
-        <img @click="openNav" src="../assets/4.svg" alt="">
+    <div v-if="isNav" @click="openNav" class="navbar">
+        <img src="../assets/4.svg" alt="">
     </div>
     <div v-else class="buttonNav">
         <div class="close">
@@ -101,7 +101,7 @@ export default {
             width: 20%;
         }
         .buttonNav{
-            width: 55%;
+            width: 65%;
         }
     }
 </style>
